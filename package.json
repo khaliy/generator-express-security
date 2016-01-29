@@ -1,12 +1,12 @@
 {
-  "name": "generator-express-simple",
+  "name": "generator-express-security",
   "version": "0.8.0",
   "description": "An express generator for Yeoman",
   "keywords": [
-    "express-simple",
+    "express-security",
     "yeoman-generator",
-    "yo-express",
-    "yeoman-generator-express-simple"
+    "yo-express-security",
+    "yeoman-generator-express-security"
   ],
   "homepage": "https://github.com/ngenerio/generator-express-simple",
   "bugs": "https://github.com/ngenerio/generator-express-simple/issues",

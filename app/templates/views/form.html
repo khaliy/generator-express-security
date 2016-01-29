@@ -1,0 +1,20 @@
+<% if (viewEngine === 'jade') { %>extends layout
+
+block content
+  form(action="/process",method="POST")
+  input(type="hidden",name="_csrf",value="#{csrfToken}")
+  |  Favorite color:
+  input(type="text",name="favoriteColor")
+  button(type="submit") Submit<% } else if (viewEngine === 'hbs'){ %>{{!< layout }}
+  <form action="/process" method="POST">
+  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+  Favorite color: <input type="text" name="favoriteColor">
+  <button type="submit">Submit</button>
+</form><% } else { %>
+  <form action="/process" method="POST">
+  <input type="hidden" name="_csrf" value="<%%= csrfToken %>">
+
+  Favorite color: <input type="text" name="favoriteColor">
+  <button type="submit">Submit</button>
+</form><% } %>

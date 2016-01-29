@@ -70,7 +70,7 @@ module.exports = function (grunt) {
         tasks: 'jshint:gruntfile'
       },
       scripts: {
-        files: ['public/js/**/*.js', '!**/*.min.*']
+        files: ['public/js/**/*.js', '!**/*.min.*'],
         tasks: ['jshint:client', 'uglify:dist']
       },
       server: {

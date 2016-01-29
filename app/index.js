@@ -34,8 +34,8 @@ ExpressSimpleGenerator.prototype.askFor = function () {
       type: 'list',
       name: 'expressVersion',
       message: 'Select the express version you want',
-      default: '3.x',
-      choices: ['3.x', '4.x']
+      default: '4.x',
+      choices: ['4.x']
     },
     {
       type: 'confirm',
@@ -102,7 +102,7 @@ ExpressSimpleGenerator.prototype.basicSetup = function () {
 
 ExpressSimpleGenerator.prototype.viewsSetup = function () {
   this.sourceRoot(path.join(__dirname, 'templates/views'));
-  ['layout', 'index', '404'].forEach(function (file) {
+  ['layout', 'index', '404', 'form'].forEach(function (file) {
     this.template(file + '.html', 'views/' + file + '.' + this.viewEngine);
   }, this);
 };
@@ -132,7 +132,7 @@ ExpressSimpleGenerator.prototype.writeBowerJSONFile = function () {
 };
 
 ExpressSimpleGenerator.prototype.projectfiles = function () {
-  ['.bowerrc', '.editorconfig', '.gitignore', '.jshintrc'].forEach(function (file) {
+  ['.bowerrc', '.editorconfig', '.gitignore', '.jshintrc', 'cert.pem', 'key.pem'].forEach(function (file) {
     this.copy(file === '.gitignore' ? 'gitignore' : file, file);
   }, this);
 };

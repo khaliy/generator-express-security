@@ -2,31 +2,38 @@
   "name": "<%= _.slugify(appname) %>",
   "version": "0.0.0",
   "dependencies": {<% if (expressVersion === '4.x') { %>
-    "express": "~4.0.0-rc2",
-    "morgan": "~1.0.0",
-    "body-parser": "~1.0.0",
-    "compression": "1.0.1",
-    "static-favicon": "~1.0.1",
-    "method-override": "~1.0.0",
-    "errorhandler": "~1.0.0",<% } else { %>
+    "express": "^4.13.4",
+    "morgan": "^1.6.1",
+    "body-parser": "~1.14.2",
+    "compression": "^1.6.1",
+    "static-favicon": "~2.0.0-alpha",
+    "method-override": "^2.3.5",
+    "helmet": "~1.1.0",
+    "express-enforces-ssl": "~1.1.0",
+    "express-content-length-validator": "~1.0.0",
+    "hpp": "~0.2.0",
+    "csurf": "~1.8.3",
+    "client-sessions": "~0.7.0",
+    "express-joi": "~0.3.1",
+    "errorhandler": "^1.4.3",<% } else { %>
     "express": "~3.4.8",<% } if (viewEngine === 'jade') { %>
-    "jade": "~1.1.5"<% } else if (viewEngine === 'hbs'){ %>
+    "jade": "^1.11.0"<% } else if (viewEngine === 'hbs'){ %>
     "express-hbs": "~0.7.9"<% } else { %>
     "ejs": "~1.0.0"<% } if (options.mvc) { %>,
     "mongoose": "~3.8.7"<% } %>
   },
   "devDependencies": {<% if (buildToolLanguage === 'coffee') { %>
     "coffee-script": "~1.7.1",<% } if (buildTool === 'grunt') { %>
-    "grunt": "~0.4.4",
-    "grunt-contrib-jshint": "~0.10.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.12.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-concurrent": "~0.5.0",
-    "grunt-node-inspector": "~0.1.5",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "matchdep": "~0.3.0",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-concat": "~0.4.0",
-    "grunt-contrib-<%= cssPreprocessor %>": <% if (cssPreprocessor === 'less') { %>"~0.11.0"<% } else if (cssPreprocessor === 'sass') { %>"~0.7.3"<% } else { %>"~0.15.0"<% } } else { %>
+    "grunt-concurrent": "~2.1.0",
+    "grunt-node-inspector": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.14.0",
+    "matchdep": "~1.0.0",
+    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-<%= cssPreprocessor %>": <% if (cssPreprocessor === 'less') { %>"~0.11.0"<% } else if (cssPreprocessor === 'sass') { %>"~0.9.2"<% } else { %>"~0.15.0"<% } } else { %>
     "gulp": "~3.6.2",
     "gulp-<%= cssPreprocessor %>": <% if (cssPreprocessor === 'less') { %>"~1.2.3"<% } else if (cssPreprocessor === 'sass') { %>"~0.7.1"<% } else { %>"~1.0.0"<% } %>,
     "gulp-concat": "~2.2.0",
